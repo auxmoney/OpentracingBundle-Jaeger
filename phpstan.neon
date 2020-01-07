@@ -1,0 +1,6 @@
+parameters:
+  paths:
+    - Factory
+
+  level: 7
+  inferPrivatePropertyTypeFromConstructor: true

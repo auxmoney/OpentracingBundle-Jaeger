@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Auxmoney\OpentracingBundle\Factory\JaegerConfigFactory:
+    class: Auxmoney\OpentracingBundle\Factory\JaegerStaticConfigFactory
+
+  Auxmoney\OpentracingBundle\Factory\TracerFactory:
+    class: Auxmoney\OpentracingBundle\Factory\JaegerTracerFactory
