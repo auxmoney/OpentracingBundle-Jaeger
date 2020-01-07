@@ -1,42 +1,52 @@
 {
-    "name": "auxmoney/opentracing-bundle-jaeger",
-    "description": "Symfony Opentracing bundle extension for Jaeger tracers",
-    "keywords": ["opentracing", "symfony", "bundle", "distributed", "tracing", "jaeger"],
-    "type": "symfony-bundle",
-    "license": "MIT",
-    "require": {
-        "php": "^7.1.33",
-        "auxmoney/opentracing-bundle-core": "dev-initial-release",
-        "jukylin/jaeger-php": "dev-master@dev",
-        "opentracing/opentracing": "1.0.0-beta5@beta"
-    },
-    "require-dev": {
-        "roave/security-advisories": "dev-master",
-        "phpunit/phpunit": "^7.5",
-        "phpstan/phpstan": "^0.12",
-        "squizlabs/php_codesniffer": "^3.5",
-        "phpmd/phpmd": "^2.7"
-    },
-    "autoload": {
-        "psr-4": {
-            "Auxmoney\\OpentracingBundle\\": "./"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Auxmoney\\OpentracingBundle\\Tests\\": "./Tests/"
-        }
-    },
-    "scripts": {
-        "quality": [
-            "@phpcs",
-            "@phpmd",
-            "@phpstan",
-            "@phpunit"
-        ],
-        "phpmd": "vendor/bin/phpmd . text cleancode,codesize,controversial,design,naming,unusedcode --exclude vendor,Tests",
-        "phpcs": "vendor/bin/phpcs",
-        "phpunit": "phpdbg -qrr vendor/bin/phpunit --colors=never",
-        "phpstan": "vendor/bin/phpstan analyse --no-progress"
+  "name": "auxmoney/opentracing-bundle-jaeger",
+  "description": "Symfony Opentracing bundle extension for Jaeger tracers",
+  "keywords": [
+    "opentracing",
+    "symfony",
+    "bundle",
+    "distributed",
+    "tracing",
+    "jaeger"
+  ],
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "conflict": {
+    "auxmoney/opentracing-bundle-zipkin": "*"
+  },
+  "require": {
+    "php": "^7.1.33",
+    "auxmoney/opentracing-bundle-core": "dev-initial-release",
+    "jukylin/jaeger-php": "dev-master@dev",
+    "opentracing/opentracing": "1.0.0-beta5@beta"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "phpunit/phpunit": "^7.5",
+    "phpstan/phpstan": "^0.12",
+    "squizlabs/php_codesniffer": "^3.5",
+    "phpmd/phpmd": "^2.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Auxmoney\\OpentracingBundle\\": "./"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Auxmoney\\OpentracingBundle\\Tests\\": "./Tests/"
+    }
+  },
+  "scripts": {
+    "quality": [
+      "@phpcs",
+      "@phpmd",
+      "@phpstan",
+      "@phpunit"
+    ],
+    "phpmd": "vendor/bin/phpmd . text cleancode,codesize,controversial,design,naming,unusedcode --exclude vendor,Tests",
+    "phpcs": "vendor/bin/phpcs",
+    "phpunit": "phpdbg -qrr vendor/bin/phpunit --colors=never",
+    "phpstan": "vendor/bin/phpstan analyse --no-progress"
+  }
 }
