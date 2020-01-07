@@ -1,0 +1,6 @@
+{
+  "name": "auxmoney/opentracing-bundle-jaeger",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "require": {}
+}
