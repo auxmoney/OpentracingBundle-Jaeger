@@ -38,8 +38,11 @@ final class JaegerTracerFactory implements TracerFactory
         }
 
         try {
-            $tracer = $config->initTracer($projectName, $agentHost . ':' . $agentPort);
-            $tracer->gen128bit();
+            $configuredTracer = $config->initTracer($projectName, $agentHost . ':' . $agentPort);
+            if ($configuredTracer) {
+                $tracer = $configuredTracer;
+                $tracer->gen128bit();
+            }
         } catch (Exception $exception) {
             $this->logger->warning(self::class . ': ' . $exception->getMessage());
         }
