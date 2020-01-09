@@ -11,8 +11,8 @@
   ],
   "type": "symfony-bundle",
   "license": "MIT",
-  "conflict": {
-    "auxmoney/opentracing-bundle-zipkin": "*"
+  "replace": {
+    "auxmoney/opentracing-bundle-tracer-implementation": "*"
   },
   "require": {
     "php": "^7.1.33",
