@@ -2,11 +2,12 @@
   "name": "auxmoney/opentracing-bundle-jaeger",
   "description": "Symfony Opentracing bundle extension for Jaeger tracers",
   "keywords": [
+    "auxmoney",
     "opentracing",
+    "opentracing-bundle",
     "symfony",
-    "bundle",
-    "distributed",
-    "tracing",
+    "symfony-bundle",
+    "distributed-tracing",
     "jaeger"
   ],
   "type": "symfony-bundle",
@@ -16,9 +17,9 @@
   },
   "require": {
     "php": "^7.1.33",
-    "auxmoney/opentracing-bundle-core": "dev-initial-release",
-    "jukylin/jaeger-php": "dev-master@dev",
-    "opentracing/opentracing": "1.0.0-beta5@beta"
+    "auxmoney/opentracing-bundle-core": "^0.3",
+    "opentracing/opentracing": "1.0.0-beta6@beta",
+    "jukylin/jaeger-php": "dev-master@dev"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",

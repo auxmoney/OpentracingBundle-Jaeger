@@ -1,5 +1,5 @@
-# Opentracing Bundle Jaeger
+# auxmoney OpentracingBundle - Jaeger
 
-.... more informations coming soon
+This symfony bundle provides a tracer implementation for [Jaeger](https://www.jaegertracing.io/) for the [auxmoney OpentracingBundle](https://github.com/auxmoney/OpentracingBundle-core).
 
-Please have a look at [the core library](https://github.com/auxmoney/OpentracingBundle-core/blob/master/README.md).
+Please have a look at [the central documentation](https://github.com/auxmoney/OpentracingBundle-core) for installation and usage instructions.
