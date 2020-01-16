@@ -43,6 +43,7 @@ class JaegerTracerFactoryTest extends TestCase
         $tracer = $this->prophesize(Jaeger::class);
         $config = $this->prophesize(Config::class);
         $config->initTracer('project name', Argument::type('string'))->willReturn($tracer->reveal());
+        $config->gen128bit()->shouldBeCalled();
         $this->jaegerConfigFactory->create()->willReturn($config->reveal());
 
         $this->logger->warning(Argument::type('string'))->shouldNotBeCalled();
@@ -60,20 +61,12 @@ class JaegerTracerFactoryTest extends TestCase
         $tracer = $this->prophesize(Jaeger::class);
         $config = $this->prophesize(Config::class);
         $config->initTracer('project name', Argument::type('string'))->willReturn($tracer->reveal());
+        $config->gen128bit()->shouldBeCalled();
         $this->jaegerConfigFactory->create()->willReturn($config->reveal());
 
         $this->logger->warning(Argument::type('string'))->shouldNotBeCalled();
 
         self::assertSame($tracer->reveal(), $this->subject->create($this->projectName, '127.0.0.1', $this->agentPort));
-    }
-
-    public function testCreateNoConfig(): void
-    {
-        $this->jaegerConfigFactory->create()->shouldBeCalled()->willReturn(null);
-
-        $this->logger->warning(Argument::containingString('could not init opentracing configuration'))->shouldBeCalledOnce();
-
-        self::assertInstanceOf(NoopTracer::class, $this->subject->create($this->projectName, $this->agentHost, $this->agentPort));
     }
 
     public function testCreateNoDnsOrIp(): void
@@ -98,6 +91,7 @@ class JaegerTracerFactoryTest extends TestCase
     {
         $config = $this->prophesize(Config::class);
         $config->initTracer('project name', Argument::type('string'))->willThrow(new Exception('tracer init exception'));
+        $config->gen128bit()->shouldBeCalled();
         $this->jaegerConfigFactory->create()->willReturn($config->reveal());
 
         $this->logger->warning(Argument::containingString('tracer init exception'))->shouldBeCalledOnce();

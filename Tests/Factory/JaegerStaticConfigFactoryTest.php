@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Auxmoney\OpentracingBundle\Tests\Factory;
 
 use Auxmoney\OpentracingBundle\Factory\JaegerStaticConfigFactory;
-use Jaeger\Config;
 use PHPUnit\Framework\TestCase;
 
 class JaegerStaticConfigFactoryTest extends TestCase
@@ -22,6 +21,6 @@ class JaegerStaticConfigFactoryTest extends TestCase
     public function testCreate(): void
     {
         $config = $this->subject->create();
-        self::assertInstanceOf(Config::class, $config);
+        self::assertNotNull($config);
     }
 }

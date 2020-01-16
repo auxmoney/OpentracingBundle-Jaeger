@@ -11,7 +11,7 @@ final class JaegerStaticConfigFactory implements JaegerConfigFactory
     /**
      * @SuppressWarnings(PHPMD.StaticAccess)
      */
-    public function create(): ?Config
+    public function create(): Config
     {
         return Config::getInstance();
     }

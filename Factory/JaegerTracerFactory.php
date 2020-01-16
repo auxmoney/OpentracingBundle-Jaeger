@@ -27,10 +27,6 @@ final class JaegerTracerFactory implements TracerFactory
         $tracer = new NoopTracer();
 
         $config = $this->jaegerConfigFactory->create();
-        if (!$config) {
-            $this->logger->warning(self::class . ': could not init opentracing configuration');
-            return $tracer;
-        }
 
         if (!dns_get_record($agentHost) && !filter_var($agentHost, FILTER_VALIDATE_IP)) {
             $this->logger->warning(self::class . ': could not resolve agent host "' . $agentHost . '"');
@@ -38,10 +34,10 @@ final class JaegerTracerFactory implements TracerFactory
         }
 
         try {
+            $config->gen128bit();
             $configuredTracer = $config->initTracer($projectName, $agentHost . ':' . $agentPort);
             if ($configuredTracer) {
                 $tracer = $configuredTracer;
-                $tracer->gen128bit();
             }
         } catch (Exception $exception) {
             $this->logger->warning(self::class . ': ' . $exception->getMessage());

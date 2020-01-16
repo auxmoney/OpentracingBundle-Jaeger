@@ -8,5 +8,5 @@ use Jaeger\Config;
 
 interface JaegerConfigFactory
 {
-    public function create(): ?Config;
+    public function create(): Config;
 }
