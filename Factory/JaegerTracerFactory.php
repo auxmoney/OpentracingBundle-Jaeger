@@ -12,13 +12,16 @@ use Psr\Log\LoggerInterface;
 final class JaegerTracerFactory implements TracerFactory
 {
     private $jaegerConfigFactory;
+    private $agentHostResolver;
     private $logger;
 
     public function __construct(
         JaegerConfigFactory $jaegerConfigFactory,
+        AgentHostResolver $agentHostResolver,
         LoggerInterface $logger
     ) {
         $this->jaegerConfigFactory = $jaegerConfigFactory;
+        $this->agentHostResolver = $agentHostResolver;
         $this->logger = $logger;
     }
 
@@ -28,12 +31,8 @@ final class JaegerTracerFactory implements TracerFactory
 
         $config = $this->jaegerConfigFactory->create();
 
-        if (!dns_get_record($agentHost) && !filter_var($agentHost, FILTER_VALIDATE_IP)) {
-            $this->logger->warning(self::class . ': could not resolve agent host "' . $agentHost . '"');
-            return $tracer;
-        }
-
         try {
+            $this->agentHostResolver->resolveAgentHost($agentHost);
             $config->gen128bit();
             $configuredTracer = $config->initTracer($projectName, $agentHost . ':' . $agentPort);
             if ($configuredTracer) {

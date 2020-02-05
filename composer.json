@@ -18,7 +18,7 @@
   },
   "require": {
     "php": "^7.1.33",
-    "auxmoney/opentracing-bundle-core": "^0.3.3",
+    "auxmoney/opentracing-bundle-core": "dev-fix-faulty-host-resolver",
     "opentracing/opentracing": "1.0.0-beta5@beta",
     "jukylin/jaeger-php": "dev-master@dev"
   },
