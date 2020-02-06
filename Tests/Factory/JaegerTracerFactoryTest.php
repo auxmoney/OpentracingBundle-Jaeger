@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Auxmoney\OpentracingBundle\Tests\Factory;
 
+use Auxmoney\OpentracingBundle\Factory\AgentHostResolver;
 use Auxmoney\OpentracingBundle\Factory\JaegerConfigFactory;
 use Auxmoney\OpentracingBundle\Factory\JaegerTracerFactory;
 use Exception;
@@ -13,9 +14,11 @@ use OpenTracing\NoopTracer;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Psr\Log\LoggerInterface;
+use RuntimeException;
 
 class JaegerTracerFactoryTest extends TestCase
 {
+    private $agentHostResolver;
     private $jaegerConfigFactory;
     private $logger;
     private $projectName;
@@ -30,15 +33,17 @@ class JaegerTracerFactoryTest extends TestCase
         $this->projectName = 'project name';
         $this->agentHost = 'localhost';
         $this->agentPort = '6831';
+        $this->agentHostResolver = $this->prophesize(AgentHostResolver::class);
         $this->jaegerConfigFactory = $this->prophesize(JaegerConfigFactory::class);
 
         $this->subject = new JaegerTracerFactory(
             $this->jaegerConfigFactory->reveal(),
+            $this->agentHostResolver->reveal(),
             $this->logger->reveal()
         );
     }
 
-    public function testCreateSuccessDns(): void
+    public function testCreateSuccess(): void
     {
         $tracer = $this->prophesize(Jaeger::class);
         $config = $this->prophesize(Config::class);
@@ -46,44 +51,23 @@ class JaegerTracerFactoryTest extends TestCase
         $config->gen128bit()->shouldBeCalled();
         $this->jaegerConfigFactory->create()->willReturn($config->reveal());
 
+        $this->agentHostResolver->ensureAgentHostIsResolvable('localhost')->shouldBeCalled();
         $this->logger->warning(Argument::type('string'))->shouldNotBeCalled();
 
         self::assertSame($tracer->reveal(), $this->subject->create($this->projectName, $this->agentHost, $this->agentPort));
     }
 
-    public function testCreateSuccessIp(): void
+    public function testCreateResolvingFailed(): void
     {
-        $this->subject = new JaegerTracerFactory(
-            $this->jaegerConfigFactory->reveal(),
-            $this->logger->reveal()
-        );
-
-        $tracer = $this->prophesize(Jaeger::class);
-        $config = $this->prophesize(Config::class);
-        $config->initTracer('project name', Argument::type('string'))->willReturn($tracer->reveal());
-        $config->gen128bit()->shouldBeCalled();
-        $this->jaegerConfigFactory->create()->willReturn($config->reveal());
-
-        $this->logger->warning(Argument::type('string'))->shouldNotBeCalled();
-
-        self::assertSame($tracer->reveal(), $this->subject->create($this->projectName, '127.0.0.1', $this->agentPort));
-    }
-
-    public function testCreateNoDnsOrIp(): void
-    {
-        $this->subject = new JaegerTracerFactory(
-            $this->jaegerConfigFactory->reveal(),
-            $this->logger->reveal()
-        );
-
         $config = $this->prophesize(Config::class);
         $this->jaegerConfigFactory->create()->willReturn($config->reveal());
 
-        $this->logger->warning(Argument::containingString('could not resolve agent host'))->shouldBeCalledOnce();
+        $this->agentHostResolver->ensureAgentHostIsResolvable('localhost')->shouldBeCalled()->willThrow(new RuntimeException('resolving failed'));
+        $this->logger->warning(Argument::containingString('resolving failed'))->shouldBeCalledOnce();
 
         self::assertInstanceOf(
             NoopTracer::class,
-            $this->subject->create($this->projectName, 'älsakfdkaofkeäkvaäsooäaegölsgälkfdvpaoskvä.cöm', $this->agentPort)
+            $this->subject->create($this->projectName, $this->agentHost, $this->agentPort)
         );
     }
 
