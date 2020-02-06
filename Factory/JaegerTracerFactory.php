@@ -32,7 +32,7 @@ final class JaegerTracerFactory implements TracerFactory
         $config = $this->jaegerConfigFactory->create();
 
         try {
-            $this->agentHostResolver->resolveAgentHost($agentHost);
+            $this->agentHostResolver->ensureAgentHostIsResolvable($agentHost);
             $config->gen128bit();
             $configuredTracer = $config->initTracer($projectName, $agentHost . ':' . $agentPort);
             if ($configuredTracer) {

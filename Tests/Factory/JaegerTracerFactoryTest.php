@@ -51,7 +51,7 @@ class JaegerTracerFactoryTest extends TestCase
         $config->gen128bit()->shouldBeCalled();
         $this->jaegerConfigFactory->create()->willReturn($config->reveal());
 
-        $this->agentHostResolver->resolveAgentHost('localhost')->shouldBeCalled();
+        $this->agentHostResolver->ensureAgentHostIsResolvable('localhost')->shouldBeCalled();
         $this->logger->warning(Argument::type('string'))->shouldNotBeCalled();
 
         self::assertSame($tracer->reveal(), $this->subject->create($this->projectName, $this->agentHost, $this->agentPort));
@@ -62,7 +62,7 @@ class JaegerTracerFactoryTest extends TestCase
         $config = $this->prophesize(Config::class);
         $this->jaegerConfigFactory->create()->willReturn($config->reveal());
 
-        $this->agentHostResolver->resolveAgentHost('localhost')->shouldBeCalled()->willThrow(new RuntimeException('resolving failed'));
+        $this->agentHostResolver->ensureAgentHostIsResolvable('localhost')->shouldBeCalled()->willThrow(new RuntimeException('resolving failed'));
         $this->logger->warning(Argument::containingString('resolving failed'))->shouldBeCalledOnce();
 
         self::assertInstanceOf(
