@@ -28,7 +28,11 @@
     "phpstan/phpstan": "^0.12",
     "squizlabs/php_codesniffer": "^3.5",
     "phpmd/phpmd": "^2.7",
-    "php-coveralls/php-coveralls": "^2.2"
+    "php-coveralls/php-coveralls": "^2.2",
+    "symfony/filesystem": "*",
+    "symfony/process": "*",
+    "symfony/yaml": "*",
+    "mtdowling/jmespath.php": "^2.5"
   },
   "autoload": {
     "psr-4": {
@@ -49,7 +53,14 @@
     ],
     "phpmd": "vendor/bin/phpmd . text cleancode,codesize,controversial,design,naming,unusedcode --exclude vendor,Tests",
     "phpcs": "vendor/bin/phpcs",
-    "phpunit": "phpdbg -qrr vendor/bin/phpunit --colors=never",
+    "phpunit": "phpdbg -qrr vendor/bin/phpunit --colors=never --testsuite=unit",
+    "phpunit-functional": [
+      "vendor/auxmoney/opentracing-bundle-core/Tests/Functional/Scripts/checkEnvironment.sh",
+      "vendor/auxmoney/opentracing-bundle-core/Tests/Functional/Scripts/setup.sh",
+      "vendor/auxmoney/opentracing-bundle-core/Tests/Functional/Scripts/createResetPoint.sh",
+      "vendor/bin/phpunit --colors=never --testsuite=functional --no-coverage",
+      "vendor/auxmoney/opentracing-bundle-core/Tests/Functional/Scripts/teardown.sh"
+    ],
     "phpstan": "vendor/bin/phpstan analyse --no-progress"
   }
 }
