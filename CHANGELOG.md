@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.3](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.3.2...v0.3.3) (2020-03-06)
+
+
+### Features
+
+* add functional tests ([#5](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/5)) ([b20bc55](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/b20bc55c2e32ecc9ec9b646a89ed57504d98773e))
+
 ### [0.3.2](https://github.com/auxmoney/OpentracingBundle-jaeger/compare/v0.3.1...v0.3.2) (2020-02-06)
 
 
