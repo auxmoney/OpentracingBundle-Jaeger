@@ -1,5 +1,7 @@
 parameters:
   env(AUXMONEY_OPENTRACING_AGENT_PORT): '6831'
+  env(AUXMONEY_OPENTRACING_SAMPLER_CLASS): Jaeger\Sampler\ConstSampler
+  env(AUXMONEY_OPENTRACING_SAMPLER_VALUE): true
 
 services:
   _defaults:
