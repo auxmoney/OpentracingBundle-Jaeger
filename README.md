@@ -24,10 +24,12 @@ If you cannot change environment variables in your project, you can alternativel
  
 ### Existing Samplers
 
-* Class: Jaeger\Sampler\ConstSampler
-    possible values: `'true'` / `'false'`
-    Description: you activate or deactivate the tracing
+* constant sampler
+    * Class: `Jaeger\Sampler\ConstSampler` 
+    * possible values: `'true'` / `'false'`
+    * Description: you activate or deactivate the tracing
 
-* Class: Jaeger\Sampler\ProbabilisticSampler
-    possible values: Rate min `'0.00'` - max `'1.00'`
-    Description: you activate the tracing for the given rate
+* probabilistic sampler
+    * Class: `Jaeger\Sampler\ProbabilisticSampler` 
+    * possible values: Rate min `'0.00'` - max `'1.00'`
+    * Description: you activate the tracing for the given rate
