@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Auxmoney\OpentracingBundle\Tests\Functional;
 
 use Symfony\Component\Process\Process;
+use GuzzleHttp\Exception\ClientException;
 
 class FunctionalTest extends JaegerFunctionalTest
 {
@@ -33,7 +34,9 @@ class FunctionalTest extends JaegerFunctionalTest
         $traceId = substr($output, 0, strpos($output, ':'));
         self::assertNotEmpty($traceId);
 
-        $spans = $this->getSpansFromTrace($this->getTraceFromJaegerAPI($traceId));
-        self::assertCount(0, $spans);
+        $this->expectException(ClientException::class);
+        $this->expectExceptionMessage('404 Not Found');
+
+        $this->getTraceFromJaegerAPI($traceId);
     }
 }
