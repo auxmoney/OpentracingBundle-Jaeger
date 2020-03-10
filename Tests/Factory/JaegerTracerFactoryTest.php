@@ -39,7 +39,7 @@ class JaegerTracerFactoryTest extends TestCase
         $this->agentHostResolver = $this->prophesize(AgentHostResolver::class);
         $this->jaegerConfigFactory = $this->prophesize(JaegerConfigFactory::class);
         $this->samplerClass = ConstSampler::class;
-        $this->samplerValue = true;
+        $this->samplerValue = 'true';
 
         $this->subject = new JaegerTracerFactory(
             $this->jaegerConfigFactory->reveal(),
