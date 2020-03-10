@@ -35,6 +35,8 @@ final class JaegerTracerFactory implements TracerFactory
         $tracer = new NoopTracer();
 
         $config = $this->jaegerConfigFactory->create();
+
+        $samplerValue = json_decode($samplerValue);
         $config->setSampler(new $samplerClass($samplerValue));
         try {
             $this->agentHostResolver->ensureAgentHostIsResolvable($agentHost);
