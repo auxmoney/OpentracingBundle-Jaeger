@@ -21,7 +21,7 @@
     "ext-json": "*",
     "auxmoney/opentracing-bundle-core": "^0.5",
     "opentracing/opentracing": "1.0.0-beta5@beta",
-    "jukylin/jaeger-php": "dev-master@dev"
+    "jukylin/jaeger-php": "2.1.1-beta@beta"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
