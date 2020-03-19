@@ -25,12 +25,19 @@ final class JaegerTracerFactory implements TracerFactory
         $this->logger = $logger;
     }
 
-    public function create(string $projectName, string $agentHost, string $agentPort): Tracer
-    {
+    public function create(
+        string $projectName,
+        string $agentHost,
+        string $agentPort,
+        string $samplerClass,
+        $samplerValue
+    ): Tracer {
         $tracer = new NoopTracer();
 
         $config = $this->jaegerConfigFactory->create();
 
+        $samplerValue = json_decode($samplerValue);
+        $config->setSampler(new $samplerClass($samplerValue));
         try {
             $this->agentHostResolver->ensureAgentHostIsResolvable($agentHost);
             $config->gen128bit();
