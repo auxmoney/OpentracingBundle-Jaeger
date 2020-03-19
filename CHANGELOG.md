@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.4](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.3.3...v0.3.4) (2020-03-19)
+
+
+### Features
+
+* add sampler configuration ([#8](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/8)) ([4bab25b](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/4bab25bc74486055601ef7673c560e7c2d0086d8))
+* use beta release instead of dev-master ([#10](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/10)) ([e130151](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/e13015151d28e3ca266fff0a89212bf60e39924a))
+
+
+### Bug Fixes
+
+* do not create travis builds for tags ([#7](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/7)) ([95f16fb](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/95f16fbe3621e110d467b827e07ab4508299a795))
+
 ### [0.3.3](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.3.2...v0.3.3) (2020-03-06)
 
 
