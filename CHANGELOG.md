@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.3.4...v0.4.0) (2020-03-20)
+
+
+### Features
+
+* semantic release ([#11](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/11)) ([b56e87d](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/b56e87d89573e5a144aa25a331dd575053e4a393))
+
 ### [0.3.4](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.3.3...v0.3.4) (2020-03-19)
 
 
