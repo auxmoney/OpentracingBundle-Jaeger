@@ -1,3 +1,10 @@
+## [0.4.2](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.4.1...v0.4.2) (2020-05-28)
+
+
+### Bug Fixes
+
+* symfony flex bundle extension ([#14](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/14)) ([85230a5](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/85230a5e928b2d33bb18bf92542e1c1647e93eac))
+
 ## [0.4.1](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.4.0...v0.4.1) (2020-03-26)
 
 
