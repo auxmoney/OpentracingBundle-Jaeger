@@ -18,9 +18,16 @@ class JaegerTracingId implements TracingId
 
     public function getAsString(): string
     {
-        $carrier = [];
-        $this->tracing->injectTracingHeadersIntoCarrier($carrier);
+        $context = $this->tracing->injectTracingHeadersIntoCarrier([]);
+        $traceHeaderName = strtoupper(Tracer_State_Header_Name);
+        if (isset($context[$traceHeaderName])) {
+            $fullTraceHeader = $context[$traceHeaderName];
+            $delimiterPosition = strpos($fullTraceHeader, ':');
+            if ($delimiterPosition !== false) {
+                return substr($fullTraceHeader, 0, $delimiterPosition);
+            }
+        }
 
-        return $carrier[Tracer_State_Header_Name];
+        return 'none';
     }
 }
