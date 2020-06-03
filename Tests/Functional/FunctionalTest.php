@@ -15,8 +15,7 @@ class FunctionalTest extends JaegerFunctionalTest
 
         $p = new Process(['symfony', 'console', 'test:jaeger'], 'build/testproject');
         $p->mustRun();
-        $output = $p->getOutput();
-        $traceId = substr($output, 0, strpos($output, ':'));
+        $traceId = trim($p->getOutput());
         self::assertNotEmpty($traceId);
 
         $spans = $this->getSpansFromTrace($this->getTraceFromJaegerAPI($traceId));
@@ -30,8 +29,7 @@ class FunctionalTest extends JaegerFunctionalTest
 
         $p = new Process(['symfony', 'console', 'test:jaeger'], 'build/testproject');
         $p->mustRun();
-        $output = $p->getOutput();
-        $traceId = substr($output, 0, strpos($output, ':'));
+        $traceId = trim($p->getOutput());
         self::assertNotEmpty($traceId);
 
         $this->expectException(ClientException::class);

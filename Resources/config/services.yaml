@@ -14,3 +14,6 @@ services:
 
   Auxmoney\OpentracingBundle\Factory\TracerFactory:
     class: Auxmoney\OpentracingBundle\Factory\JaegerTracerFactory
+
+  Auxmoney\OpentracingBundle\Internal\TracingId:
+    class: Auxmoney\OpentracingBundle\Internal\JaegerTracingId
