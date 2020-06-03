@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.4.2...v0.5.0) (2020-06-03)
+
+
+### Features
+
+* add trace id header capability ([#15](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/15)) ([d94cdb6](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/d94cdb68080b7df614bd192ad981ec580c1fb106))
+
 ## [0.4.2](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.4.1...v0.4.2) (2020-05-28)
 
 
