@@ -7,7 +7,7 @@ namespace Auxmoney\OpentracingBundle\Tests\Functional;
 use Symfony\Component\Process\Process;
 use GuzzleHttp\Exception\ClientException;
 
-class FunctionalTest extends JaegerFunctionalTest
+class FunctionalTest extends JaegerConsoleFunctionalTest
 {
     public function testSuccessfulTracing(): void
     {
