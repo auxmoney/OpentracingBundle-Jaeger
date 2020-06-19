@@ -1,3 +1,10 @@
+## [0.5.2](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.5.1...v0.5.2) (2020-06-19)
+
+
+### Bug Fixes
+
+* upgrade jaeger binding ([#16](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/16)) ([591a607](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/591a60719f48da39845f5e243bd6f53e7b083cae))
+
 ## [0.5.1](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.5.0...v0.5.1) (2020-06-15)
 
 
