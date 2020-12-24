@@ -1,7 +1,8 @@
 #!/bin/bash
+shopt -s extglob
 
 cd build/testproject/
-composer remove auxmoney/opentracing-bundle-jaeger
-composer config repositories.origin vcs https://github.com/${PR_ORIGIN}
-composer require auxmoney/opentracing-bundle-jaeger:dev-${BRANCH}
+rm -fr vendor/auxmoney/opentracing-bundle-jaeger/*
+cp -r ../../!(build|vendor) vendor/auxmoney/opentracing-bundle-jaeger
+composer dump-autoload
 cd ../../
