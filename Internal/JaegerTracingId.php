@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Auxmoney\OpentracingBundle\Internal;
 
 use Auxmoney\OpentracingBundle\Service\Tracing;
+
 use const Jaeger\Constants\Tracer_State_Header_Name;
 
 class JaegerTracingId implements TracingId
