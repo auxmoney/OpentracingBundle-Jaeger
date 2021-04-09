@@ -29,7 +29,7 @@ class JaegerTracerFactoryTest extends TestCase
     private $samplerClass;
     private $samplerValue;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->logger = $this->prophesize(LoggerInterface::class);
