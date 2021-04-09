@@ -20,7 +20,7 @@ class TestCommand extends Command
         $this->tracingId = $tracingId;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln($this->tracingId->getAsString());
         return 0;
