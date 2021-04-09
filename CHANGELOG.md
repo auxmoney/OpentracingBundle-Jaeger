@@ -1,3 +1,10 @@
+## [0.5.4](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.5.3...v0.5.4) (2021-04-09)
+
+
+### Bug Fixes
+
+* drop PHP versions 7.1 and 7.2 ([#22](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/22)) ([5a97983](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/5a979832a4f2f1ea04c9bf67e7f147a3def7a478))
+
 ## [0.5.3](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.5.2...v0.5.3) (2020-12-24)
 
 
