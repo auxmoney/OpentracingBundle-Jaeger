@@ -66,6 +66,7 @@ class JaegerTracerFactoryTest extends TestCase
     public function testCreateResolvingFailed(): void
     {
         $config = $this->prophesize(Config::class);
+        $config->setSampler(Argument::type(ConstSampler::class))->shouldBeCalled();
         $this->jaegerConfigFactory->create()->willReturn($config->reveal());
 
         $this->agentHostResolver->ensureAgentHostIsResolvable('localhost')->shouldBeCalled()->willThrow(new RuntimeException('resolving failed'));
