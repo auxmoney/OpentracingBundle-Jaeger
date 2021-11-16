@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v1.0.0...v1.0.1) (2021-11-16)
+
+
+### Bug Fixes
+
+* cleanup version and alerts ([#24](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/24)) ([8d45243](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/8d4524360093651de5e4916be5d496f7d4c19dd7))
+
 # [1.0.0](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.5.4...v1.0.0) (2021-11-16)
 
 
