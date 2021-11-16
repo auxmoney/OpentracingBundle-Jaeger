@@ -1,3 +1,13 @@
+# [1.0.0](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.5.4...v1.0.0) (2021-11-16)
+
+
+* feat!: replace jaeger-php with fork (#23) ([b884130](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/b8841306fc5c49fd241a17c117f920b56ccbc815)), closes [#23](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/23)
+
+
+### BREAKING CHANGES
+
+* replace jaeger-php with fork
+
 ## [0.5.4](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v0.5.3...v0.5.4) (2021-04-09)
 
 
