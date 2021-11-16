@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Auxmoney\OpentracingBundle\Factory;
 
 use Exception;
+use Jaeger\Sampler\Sampler;
 use OpenTracing\NoopTracer;
 use OpenTracing\Tracer;
 use Psr\Log\LoggerInterface;
@@ -37,14 +38,13 @@ final class JaegerTracerFactory implements TracerFactory
         $config = $this->jaegerConfigFactory->create();
 
         $samplerValue = json_decode($samplerValue);
-        $config->setSampler(new $samplerClass($samplerValue));
+        /** @var Sampler $sampler */
+        $sampler = new $samplerClass($samplerValue);
+        $config->setSampler($sampler);
         try {
             $this->agentHostResolver->ensureAgentHostIsResolvable($agentHost);
             $config->gen128bit();
-            $configuredTracer = $config->initTracer($projectName, $agentHost . ':' . $agentPort);
-            if ($configuredTracer) {
-                $tracer = $configuredTracer;
-            }
+            $tracer = $config->initTracer($projectName, $agentHost . ':' . $agentPort);
         } catch (Exception $exception) {
             $this->logger->warning(self::class . ': ' . $exception->getMessage());
         }
