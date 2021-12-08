@@ -14,11 +14,14 @@ use Jaeger\Sampler\ConstSampler;
 use OpenTracing\NoopTracer;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 
 class JaegerTracerFactoryTest extends TestCase
 {
+    use ProphecyTrait;
+
     private $agentHostResolver;
     private $jaegerConfigFactory;
     private $logger;
