@@ -8,10 +8,13 @@ use Auxmoney\OpentracingBundle\DependencyInjection\PSR18CompilerPass;
 use Auxmoney\OpentracingBundle\OpentracingBundle;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class OpentracingBundleTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var OpentracingBundle */
     private $subject;
 

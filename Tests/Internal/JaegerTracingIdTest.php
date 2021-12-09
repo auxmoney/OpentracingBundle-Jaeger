@@ -7,10 +7,13 @@ namespace Auxmoney\OpentracingBundle\Tests\Internal;
 use Auxmoney\OpentracingBundle\Internal\JaegerTracingId;
 use Auxmoney\OpentracingBundle\Service\Tracing;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 
 class JaegerTracingIdTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var Tracing|ObjectProphecy */
     private $tracing;
     /** @var JaegerTracingId */
