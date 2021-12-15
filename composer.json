@@ -19,7 +19,7 @@
   "require": {
     "php": "^7.4|^8.0",
     "ext-json": "*",
-    "auxmoney/opentracing-bundle-core": "dev-php-8 as 1.1.0",
+    "auxmoney/opentracing-bundle-core": "^1.0",
     "opentracing/opentracing": "^1.0.1",
     "auxmoney/jaeger-php": "^3.0"
   },

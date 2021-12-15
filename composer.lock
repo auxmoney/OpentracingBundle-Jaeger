@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bbf96ceecc66d9d02682aff77af258a",
+    "content-hash": "9fe58e7dca2864bacb06b38825fcfecc",
     "packages": [
         {
             "name": "auxmoney/jaeger-php",
@@ -69,16 +69,16 @@
         },
         {
             "name": "auxmoney/opentracing-bundle-core",
-            "version": "dev-php-8",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/auxmoney/OpentracingBundle-core.git",
-                "reference": "c8569aefa20936e0e338770b8383ed8211bd1609"
+                "reference": "2805383073489172e12244e018afaa0af11baeb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/auxmoney/OpentracingBundle-core/zipball/c8569aefa20936e0e338770b8383ed8211bd1609",
-                "reference": "c8569aefa20936e0e338770b8383ed8211bd1609",
+                "url": "https://api.github.com/repos/auxmoney/OpentracingBundle-core/zipball/2805383073489172e12244e018afaa0af11baeb1",
+                "reference": "2805383073489172e12244e018afaa0af11baeb1",
                 "shasum": ""
             },
             "require": {
@@ -133,9 +133,9 @@
             ],
             "support": {
                 "issues": "https://github.com/auxmoney/OpentracingBundle-core/issues",
-                "source": "https://github.com/auxmoney/OpentracingBundle-core/tree/php-8"
+                "source": "https://github.com/auxmoney/OpentracingBundle-core/tree/v1.0.2"
             },
-            "time": "2021-12-14T17:12:24+00:00"
+            "time": "2021-12-15T10:26:19+00:00"
         },
         {
             "name": "composer/package-versions-deprecated",
@@ -5854,17 +5854,9 @@
             "time": "2021-03-09T10:59:23+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "auxmoney/opentracing-bundle-core",
-            "version": "dev-php-8",
-            "alias": "1.1.0",
-            "alias_normalized": "1.1.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "auxmoney/opentracing-bundle-core": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
