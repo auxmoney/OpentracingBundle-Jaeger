@@ -17,7 +17,7 @@
     "auxmoney/opentracing-bundle-tracer-implementation": "*"
   },
   "require": {
-    "php": "^7.3.27",
+    "php": "^7.4|^8.0",
     "ext-json": "*",
     "auxmoney/opentracing-bundle-core": "^1.0",
     "opentracing/opentracing": "^1.0.1",
