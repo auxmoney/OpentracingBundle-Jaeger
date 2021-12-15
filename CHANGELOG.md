@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v1.0.1...v1.1.0) (2021-12-15)
+
+
+### Features
+
+* support PHP 8 ([#26](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/26)) ([ebcd7a1](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/ebcd7a15453aef9ad756c84d6784be5ae331b0de))
+
 ## [1.0.1](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v1.0.0...v1.0.1) (2021-11-16)
 
 
