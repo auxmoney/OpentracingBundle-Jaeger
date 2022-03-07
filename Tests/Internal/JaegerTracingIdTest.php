@@ -16,8 +16,7 @@ class JaegerTracingIdTest extends TestCase
 
     /** @var Tracing|ObjectProphecy */
     private $tracing;
-    /** @var JaegerTracingId */
-    private $subject;
+    private JaegerTracingId $subject;
 
     public function setUp(): void
     {

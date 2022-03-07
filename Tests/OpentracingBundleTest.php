@@ -15,8 +15,7 @@ class OpentracingBundleTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @var OpentracingBundle */
-    private $subject;
+    private OpentracingBundle $subject;
 
     public function setUp(): void
     {

@@ -1,7 +1,7 @@
 # auxmoney OpentracingBundle - Jaeger
 
 [![test](https://github.com/auxmoney/OpentracingBundle-Jaeger/workflows/test/badge.svg)](https://github.com/auxmoney/OpentracingBundle-Jaeger/actions?query=workflow%3Atest)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/auxmoney/OpentracingBundle-Jaeger)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/auxmoney/OpentracingBundle-Jaeger)](https://github.com/auxmoney/OpentracingBundle-Jaeger/releases/latest)
 ![Coveralls github](https://img.shields.io/coveralls/github/auxmoney/OpentracingBundle-Jaeger)
 ![Codacy Badge](https://api.codacy.com/project/badge/Grade/dd11fb9bdbe54affb1946a03af5f432a)
 ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/auxmoney/OpentracingBundle-Jaeger)

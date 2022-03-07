@@ -25,12 +25,12 @@ class JaegerTracerFactoryTest extends TestCase
     private $agentHostResolver;
     private $jaegerConfigFactory;
     private $logger;
-    private $projectName;
-    private $agentHost;
-    private $agentPort;
-    private $subject;
-    private $samplerClass;
-    private $samplerValue;
+    private string $projectName;
+    private string $agentHost;
+    private string $agentPort;
+    private JaegerTracerFactory $subject;
+    private string $samplerClass;
+    private string $samplerValue;
 
     public function setUp(): void
     {

@@ -20,17 +20,26 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        symfony:
-          - '3.4.*'
-          - '4.4.*'
-          - '5.3.*'
-        php:
-          - '7.4'
-          - '8.0'
-          - '8.1'
+        include:
+          - symfony: '4.4.*'
+            php: '7.4'
+          - symfony: '4.4.*'
+            php: '8.0'
+          - symfony: '4.4.*'
+            php: '8.1'
+          - symfony: '5.4.*'
+            php: '7.4'
+          - symfony: '5.4.*'
+            php: '8.0'
+          - symfony: '5.4.*'
+            php: '8.1'
+          - symfony: '6.0.*'
+            php: '8.0'
+          - symfony: '6.0.*'
+            php: '8.1'
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup PHP Action
         uses: shivammathur/setup-php@v2
         with:
@@ -55,7 +64,7 @@ jobs:
       - name: upload coverage
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: php vendor/bin/php-coveralls --coverage_clover=build/logs/clover.xml -v
+        run: php vendor/bin/php-coveralls --exclude-no-stmt --coverage_clover=build/logs/clover.xml -v
 
   test_functional:
     name: Functional Tests
@@ -64,17 +73,26 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        symfony:
-          - '3.4.*'
-          - '4.4.*'
-          - '5.3.*'
-        php:
-          - '7.4'
-          - '8.0'
-          - '8.1'
+        include:
+          - symfony: '4.4.*'
+            php: '7.4'
+          - symfony: '4.4.*'
+            php: '8.0'
+          - symfony: '4.4.*'
+            php: '8.1'
+          - symfony: '5.4.*'
+            php: '7.4'
+          - symfony: '5.4.*'
+            php: '8.0'
+          - symfony: '5.4.*'
+            php: '8.1'
+          - symfony: '6.0.*'
+            php: '8.0'
+          - symfony: '6.0.*'
+            php: '8.1'
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup PHP Action
         uses: shivammathur/setup-php@v2
         with:
