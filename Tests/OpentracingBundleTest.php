@@ -27,7 +27,7 @@ class OpentracingBundleTest extends TestCase
     public function testBuild(): void
     {
         $containerBuilder = $this->prophesize(ContainerBuilder::class);
-        $containerBuilder->addCompilerPass(Argument::type(PSR18CompilerPass::class))->shouldBeCalled();
+        $containerBuilder->addCompilerPass(Argument::type(PSR18CompilerPass::class))->shouldBeCalled()->willReturn($containerBuilder->reveal());
 
         $this->subject->build($containerBuilder->reveal());
     }

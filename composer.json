@@ -65,5 +65,10 @@
       "vendor/auxmoney/opentracing-bundle-core/Tests/Functional/Scripts/teardown.sh"
     ],
     "phpstan": "vendor/bin/phpstan analyse --no-progress"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true
+    }
   }
 }
