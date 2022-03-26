@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v1.1.0...v1.2.0) (2022-03-26)
+
+
+### Features
+
+* support Symfony 6 ([#27](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/27)) ([0d4cd31](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/0d4cd3152bddb9dafdf7b6c53528cb4ea8fc0cd5))
+
 # [1.1.0](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v1.0.1...v1.1.0) (2021-12-15)
 
 
