@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class JaegerStaticConfigFactoryTest extends TestCase
 {
-    private $subject;
+    private JaegerStaticConfigFactory $subject;
 
     public function setUp(): void
     {

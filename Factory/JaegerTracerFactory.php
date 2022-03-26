@@ -12,9 +12,9 @@ use Psr\Log\LoggerInterface;
 
 final class JaegerTracerFactory implements TracerFactory
 {
-    private $jaegerConfigFactory;
-    private $agentHostResolver;
-    private $logger;
+    private JaegerConfigFactory $jaegerConfigFactory;
+    private AgentHostResolver $agentHostResolver;
+    private LoggerInterface $logger;
 
     public function __construct(
         JaegerConfigFactory $jaegerConfigFactory,

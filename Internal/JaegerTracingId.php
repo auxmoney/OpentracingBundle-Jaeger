@@ -10,7 +10,7 @@ use const Jaeger\Constants\Tracer_State_Header_Name;
 
 class JaegerTracingId implements TracingId
 {
-    private $tracing;
+    private Tracing $tracing;
 
     public function __construct(Tracing $tracing)
     {

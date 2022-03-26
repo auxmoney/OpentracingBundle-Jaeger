@@ -11,7 +11,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class OpentracingExtensionTest extends TestCase
 {
-    private $subject;
+    private OpentracingExtension $subject;
 
     public function setUp(): void
     {
