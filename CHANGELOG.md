@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v1.2.0...v1.2.1) (2022-07-21)
+
+
+### Bug Fixes
+
+* symfony/flex plugin ([#32](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/32)) ([d886fd7](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/d886fd75b39059b3f7bc9e21f5bd57e1bfab798c))
+
 # [1.2.0](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v1.1.0...v1.2.0) (2022-03-26)
 
 
