@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v1.2.1...v1.2.2) (2022-08-23)
+
+
+### Bug Fixes
+
+* symfony cli installation ([#34](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/34)) ([9860a69](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/9860a690d24c506013039e0309f7f5f9fc5389ed))
+
 ## [1.2.1](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v1.2.0...v1.2.1) (2022-07-21)
 
 
