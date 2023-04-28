@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v1.2.2...v1.2.3) (2023-04-28)
+
+
+### Bug Fixes
+
+* update supported PHP and Symfony versions + fix composer behavio… ([#37](https://github.com/auxmoney/OpentracingBundle-Jaeger/issues/37)) ([74197b3](https://github.com/auxmoney/OpentracingBundle-Jaeger/commit/74197b35b6b0c523face6e922340603ed1d8dc36))
+
 ## [1.2.2](https://github.com/auxmoney/OpentracingBundle-Jaeger/compare/v1.2.1...v1.2.2) (2022-08-23)
 
 
